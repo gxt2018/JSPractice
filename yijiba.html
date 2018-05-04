@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF8"/>
+<script src="js/jquery-1.8.3.min.js"></script>
+<title>login</title>
+</head>
+<body>
+	<form id="login-form">
+		username <input type="text" id="username"><br/>
+		password <input type="password" id="password"><br/>
+		name <input type="text" id="name"><br/>
+		<input type="button" onclick="login()" value="login">
+			<span id="error-msg" style="color: red;"></span>
+			<input type="button" value="确定" id="confirmError" style="display: none;">
+	</form>
+</body>
+<script >
+	function login(){
+		var username=$('#username').val();
+		var pwd=$('#password').val();
+		var name=$('#name').val();
+		if(username=="admin" && pwd=="123"){
+			window.location.href='./first.html?name='+name;
+		}else{
+			$('#error-msg').css('display','');
+			$('#error-msg').text('您输入的账号不正确或者密码错误！');
+			$('#confirmError').css('display','');
+		}
+	}
+
+	$(function(){
+		$('#confirmError').on('click',function(){
+			$('#username').val('');
+			$('#password').val('');
+			$('#name').val('');
+			$('#error-msg').css('display','none');
+			$('#confirmError').css('display','none');
+		});
+	})
+</script>
+</html>

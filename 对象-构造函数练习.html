@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/html">
+    var cat = {
+        name:"Tom",
+        age:"5",
+        eat:function(){
+            document.write("chi");
+        },
+        run:function(){
+            document.write("pao");
+        }
+    };
+    console.log(cat);
+    for (var key in cat){ //注意，对于对象的遍历，需要使用for in
+        document.write(cat[key]);
+
+    }
+</script>
+<script type="text/html">
+    //构造函数
+    //xxx.  其中点是用来表示内部的一个属性   xxx:  其中冒号是用来表示内部的一个方法
+    function Person() {
+        var obj = new Object();
+        obj.name = null;
+        obj.age = null;
+        obj.sex = null;
+        obj:eat = function () {
+            console.log(this.name+"吃");
+        }
+        obj:run = function () {
+            console.log(this.name+"跑");
+        }
+        return obj;
+    }
+    var p = Person();
+    p.name = "gxt";
+    p.age = "10";
+    p.sex = "man";
+    p:run();
+    p:eat();
+    console.log(p);
+
+</script>
+<script>
+    //1.构造函数
+    function Dog(name,age,friend,food){
+        this.name = name;
+        this.age = age;
+        this.friend = friend;
+//        this.eat = function () {
+//            console.log(this.name + "在吃" + food);
+//        }
+//        this.run = function (somewhere) {
+//            console.log(this.age + "岁的" + this.name + "在" + somewhere + "跑");
+//        }
+    }
+    Dog.prototype = {
+        eat:function () {
+            console.log(this.name + "在吃" + this.food);
+        },
+        run:function (somewhere) {
+            console.log(this.age + "岁的" + this.name + "在" + somewhere + "跑");
+        }
+    }
+    var xiaohuang = new Dog("小花","7","小黄","骨头");
+    xiaohuang.age = "1";
+//    xiaohuang.name = "xiaohuang";
+//    xiaohuang.age = "6";
+//    xiaohuang.friend = "xiaohon";
+    console.log(xiaohuang);
+    xiaohuang.eat();
+    xiaohuang.run("公园");
+
+    var bigdog = new Dog("大花","11","大大","大骨头")
+    console.log(bigdog);
+    bigdog.eat();
+    bigdog.run("河边");
+    //对于一些要开放出来的属性，我们需要优化一下代码，使用prototype
+
+</script>
+</body>
+</html>

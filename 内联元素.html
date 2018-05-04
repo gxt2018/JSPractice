@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内联元素</title>
+</head>
+<style>
+    #span1{
+        margin: 0px;
+        color:red;
+        /*display: ;*/
+        display:inline;
+        /*block:块状*/
+        /*inline:内联*/
+    }
+    #test{
+        font-size: 20px;
+        /*字体大小*/
+        color:greenyellow;
+        font-weight: bold;
+        /*是否加粗*/
+        font-family: "Andale Mono";
+        /*是什么字体？*/
+        line-height: 10px;
+        /*行间距*/
+        font-style: italic;
+        /*字体风格*/上面的是斜体
+    }
+</style>
+<!--内联元素中，设置margin，宽，高是没有意义的。-->
+<!--通过对元素的display属性的改变，能转换块级元素和行内元素-->
+<div>
+    离离原上草，一岁一<span id="span1">枯荣</span>。<br>
+    野火烧不尽，春风吹又生。
+</div>
+<p id="test"></p>
+</body>
+</html>

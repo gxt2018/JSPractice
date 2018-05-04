@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    username <input type="text" id="un"><br/>
+    password <input type="password" id="pwd"><br/>
+    <input type="button" onclick="()" value="提交">
+</body>
+<script >
+    function tijiao(){
+        var username=document.getElementById("un").value;
+        var password=document.getElementById("pwd").value;
+        if(username=="admin" && password=="123"){
+            alert("success");
+        }else
+            return false;
+    }
+</script>
+</html>

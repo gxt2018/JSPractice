@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css练习</title>
+    <link rel="stylesheet" href="css/demo1.css">
+    <!--css优先级-->
+    <style>
+        p{
+            color:red;
+        }
+        #testid{
+            color:blue;
+        }
+        .testclass{
+            color:orangered;
+        }
+        div p{
+            color:white;
+        }
+        div #testid{
+            color:deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="testid" class="testclass">你好你好</p>
+    </div>
+
+</body>
+</html>

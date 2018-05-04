@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易相册</title>
+    <style>
+        #box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        #ul{
+            display: flex;
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            /*cursor:pointer;*/
+
+        }
+        li{
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+<p id="bjTitle">一</p>
+<img id="bjImg" src="images/icon_01.png" width="540"/>
+
+<ul id="ul">
+    <li >
+        <a href="images/icon_01.png" title="一" >
+            <img src="images/icon_01.png" width="100" alt="一"/>
+        </a>
+    </li>
+    <li >
+        <a href="images/icon_02.png" title="二" >
+            <img src="images/icon_02.png" width="100" alt="二"/>
+        </a>
+    </li>
+    <li >
+        <a href="images/icon_03.png" title="三" >
+            <img src="images/icon_03.png" width="100" alt="三"/>
+        </a>
+    </li>
+    <li >
+        <a href="images/icon_04.png" title="四" >
+            <img src="images/icon_04.png" width="100" alt="四"/>
+        </a>
+    </li>
+    <li >
+        <a href="images/icon_05.png" title="五" >
+            <img src="images/icon_05.png" width="100" alt="五"/>
+        </a>
+    </li>
+</ul>
+</div>
+</body>
+<script>
+    var bjTitle = document.getElementById("bjTitle");
+    var bjImg = document.getElementById("bjImg");
+    var ul = document.getElementById("ul");
+    var aList = ul.getElementsByTagName("a");
+
+    for (i=0;i<aList.length;i++){
+        aList[i].onclick = function () {
+            bjTitle.innerHTML = this.title;
+            bjImg.src = this.href;
+            return false;
+        }
+    }
+</script>
+</html>

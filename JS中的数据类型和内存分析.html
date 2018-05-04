@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //栈区和堆区 --- 类似于内存和硬盘  栈区存放体积小的，一般为简单（基础）数据类型。如：number,string.null....
+    //                                堆区存放体积大的，一般为复杂的数据类型。     如：Object，Array,Date
+
+    // 栈区通过 关键字key来访问  ，堆区需要通过栈区来进行访问，不能直接访问
+    var name = "xx";
+    var newName = name;
+    document.write(name + "<br/>" + newName);
+
+    name = "yy";
+    document.write("<br/>" + name + "<br/>" + newName);
+
+    var obj = {name:"gxt",age:"10"};
+    var newObj = obj;
+    obj.name = "tim";
+    console.log(obj);
+    console.log(newObj);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+xxxx:before {
+     content: "\a0"; /*不换行空格*/
+     display: inline-block;
+     vertical-align: middle;
+     font-size: 18px;
+     width: 1em;
+     height: 1em;
+     margin-right: .4em;
+     border-radius: 50%;
+     border: 1px solid #01cd78;
+     text-indent: .15em;
+     line-height: 1;
+ }

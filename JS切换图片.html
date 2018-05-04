@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<img id="icon" src="images/icon_01.png" alt="" style="width:80px;height:80px;" /></br>
+<button id="prev"/>上一张
+<button id="next"/>下一张</br>
+<button id="show"/>显示
+<button id="hide"/>隐藏
+
+
+</body>
+<script>
+    window.onload = function () {
+        var icon = document.getElementById("icon");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var maxIndex = 5,minIndex = 1,currentIndex = minIndex;
+        prev.onclick = function () {
+            if (currentIndex === minIndex){
+                currentIndex = maxIndex;
+            }else{
+                currentIndex--;
+            }
+            icon.src = "images/icon_0" + currentIndex + ".png";
+        }
+        next.onclick = function () {
+            if (currentIndex === maxIndex){
+                currentIndex = minIndex;
+            }else{
+                currentIndex++;
+            }
+            icon.src = "images/icon_0" + currentIndex + ".png";
+        }
+        show.onclick = function () {
+            icon.style.display = "block";
+        }
+        hide.onclick = function () {
+            icon.style.display = "none";
+        }
+
+    }
+</script>
+</html>

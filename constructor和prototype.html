@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/html">
+    var obj = {
+        name:"张三",
+        eat:function () {
+        console.log("吃");
+    }
+    }
+    obj.age = 19;
+    obj.name = "张三2";
+    obj.eat = function () {
+        console.log("喝");
+    }
+    console.log(obj.name);
+    console.log(obj);
+
+    obj.eat();
+
+</script>
+<script>
+
+    var arr = new Array();
+    //给数组添加一个方法
+//    arr.eat = function () {
+//        console.log("数组会吃东西")
+//    }
+//    arr.eat();
+//    var arr1 = new Array();
+//    arr1.eat();//报错，添加方法为局部，只能给arr对象用
+    Array.prototype.eat = function () {
+        alert("成功添加方法到Array函数中！");
+    }
+//    arr.eat();
+    var arr2 = new Array();
+//    Array.eat();
+    //constructor  用来显示一个对象的父级构造函数
+    arr.constructor();
+    console.log(arr.constructor());
+    arr2.constructor();
+    console.log(arr2.constructor());
+
+
+</script>
+</body>
+</html>

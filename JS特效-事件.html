@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--&#45;&#45; 匿名函数   ：是指没有函数名的函数  例如 btn.onclick = function (){}  这个函数就是匿名函数-->
+    <!--DOM-->
+    <!--document.open() &#45;&#45; 页面跳转的时候经常用9-->
+    <!--document.close()-->
+    <!--document.getElementById()-->
+    <!--document.getElementByName()-->
+    <!--document.getElementByClassName()--> 类名
+    <!--&lt;!&ndash;document.getElementByTagName()&ndash;&gt;   标签名  例如button-->
+    <!--<button id="btn1">点我1</button>-->
+    <!--<button id="btn2" class="my-btn">点我2</button>-->
+    <!--<button id="btn3" class="my-btn">点我3</button>-->
+    <!--点击图片进行关闭-->
+    <!--<div id="box">-->
+        <!--<img id="pic1" width="280" alt="" src="images/pop01.png">-->
+        <!--<img id="pic2" width="30" alt="" src="images/icon_popclose.png">-->
+    <!--</div>-->
+    <div id="box">
+        <button class="btn">Click!</button>
+        <span id="span">
+           <a href="http://baidu.com">百度一下</a>
+        </span>
+        <p>aaa</p>
+    </div>
+</body>
+<script type="text/html">
+    var btn = document.getElementById("btn1");
+    var btn11 = document.getElementsByClassName("my-btn")[0];//nodelist
+    var btn22 = document.getElementsByTagName("button")[2];
+    var btn33 = document.querySelector("#btn1");//单个
+    var btn44 = document.querySelectorAll(".my-btn"); //nodelist
+
+    console.log(btn);
+    console.log(btn11);
+    console.log(btn22);
+    console.log(btn33);
+    console.log(btn44);
+</script>
+<script type="text/html">
+    var box = document.getElementById("box");
+    var pic2 = document.getElementById("pic2");
+    pic2.onclick = function () {
+        box.style.display = "none";
+    }
+</script>
+<script>
+    //获取父节点方法，首先拿到这个标签对象
+    //获取兄弟结点：上一个previousElementSibling，下一个nextElementSibling
+    //获取第一个节点：firstElementChild，获取最后一个节点：lastElementChild
+    //获取所有子节点 children
+    var a = document.getElementsByTagName("a")[0];
+    var a1 = a.parentNode;
+    var a2 = a1.parentNode;
+    //console.log(a1,a2);
+    a2.style.backgroundColor = "red";
+    var span = document.getElementById("span");
+    var b1 = span.previousElementSibling || span.nextSibling;
+//    console.log(b1);
+    var first = document.getElementById("box");
+//    console.log(first.lastElementChild);
+    console.log(first.children);
+</script>
+</html>

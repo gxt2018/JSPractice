@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>下拉菜单实例|菜鸟教程(runoob.com)</title>
+    <meta charset="utf-8">
+    <style>
+        .btn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .view2 {
+            display: none;
+        }
+
+        .view2 a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .view2 a:hover {background-color: #f1f1f1}
+
+        .view1:hover .view2 {
+            display: block;
+        }
+
+        .view1:hover .btn1 {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+<h2>下拉菜单</h2>
+<p>鼠标移动到按钮上打开下拉菜单。</p>
+
+<div class="view1">
+    <button class="btn1">下拉菜单</button>
+    <div class="view2">
+        <a href="http://www.runoob.com">菜鸟教程 1</a>
+        <a href="http://www.runoob.com">菜鸟教程 2</a>
+        <a href="http://www.runoob.com">菜鸟教程 3</a>
+    </div>
+</div>
+
+</body>
+</html>

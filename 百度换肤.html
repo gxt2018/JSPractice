@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度换肤</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            vertical-align: top;
+        }
+        #box{
+            background-color: rgba(255,255,255,.5);
+        }
+        #box ul{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor:pointer;
+        }
+        li{
+            width: 100px;
+            height:80px;
+        }
+        body{
+            background: url("images/pic01.jpg") no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul id="ul">
+        <li><img src="images/pic01.jpg" alt=""></li>
+        <li><img src="images/pic02.jpg" alt=""></li>
+        <li><img src="images/pic03.jpg" alt=""></li>
+        <li><img src="images/pic04.jpg" alt=""></li>
+        <li><img src="images/pic05.jpg" alt=""></li>
+    </ul>
+    
+</div>
+
+</body>
+<script>
+    var box = document.getElementById("box");
+    var liList = box.getElementsByTagName("li");
+    for (i=0;i<liList.length;i++){
+        liList[i].index = i+1;
+        liList[i].onclick = function () {
+            document.body.style.background = 'url("images/pic02.jpg")';
+        }
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="utf-8"> 
+    <title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+<form action="">
+    <input type="radio" name="sex" value="male">Male
+    <br>
+    <input type="radio" name="sex" value="female">Female
+    <br>
+    <input type="radio" name="sex" value="none">None
+</form>
+
+<form action="">
+    <select name="EduLevel">
+        <option value="1">小学</option>
+        <option value="2">初中</option>
+        <option value="3">高中</option>
+        <option value="4">大学</option>
+    </select>
+</form>
+
+<h3>发送邮件到 someone@example.com:</h3>
+
+<form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+    Name:<br>
+    <input type="text" name="name" ><br>
+    E-mail:<br>
+    <input type="text" name="mail" ><br>
+    Comment:<br>
+    <input type="text" name="comment"  size="50"><br><br>
+    <input type="submit" value="发送">
+    <input type="reset" value="重置">
+</form>
+
+<div id="container" style="width:500px">
+
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">主要的网页标题</h1></div>
+
+    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+        <b>菜单</b><br>
+        HTML<br>
+        CSS<br>
+        JavaScript</div>
+
+    <img id="content" src="xxx.jpg">
+
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权 © runoob.com</div>
+
+</div>
+
+</body>
+<script>
+    var container = document.getElementById("container");
+    container.onmousedown = function () {
+        container.style.backgroundColor = "red";
+        console.log("down");
+    }
+    container.onmousemove = function () {
+        container.style.backgroundColor = "red";
+        console.log("move");
+
+    }
+    container.onmouseup = function () {
+        container.style.backgroundColor = "red";
+        alert("up");
+    }
+
+</script>
+</html>

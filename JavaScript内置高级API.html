@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,0,11,34,21,5,12];
+//    console.log(arr.sort(function (a,b) {
+//        return a-b;//升序 冒泡
+//    }));
+//    console.log(arr.sort(function (a,b) {
+//        return b-a;//降序
+//    }));
+
+    //清空数组  splice(0)
+//    arr.splice(0);
+//    console.log(arr);
+    //数组循环   forEach()
+//    arr.forEach(function (value,index) {
+//        document.write(value + index);
+//    })
+    //arr.every = function(a,b){return ....} -- a = value, b = index ---- true or false
+    //当所有数组中的元素全都满足函数条件时，返回true，反之则为false
+
+    //arr.some = function.....
+    //当所有数组中的其中一个元素满足函数条件时，返回true，反之则为false
+    var flag = arr.every(function (value, index) {
+        return value > -1;
+    })
+    document.write(flag);
+</script>
+</body>
+</html>

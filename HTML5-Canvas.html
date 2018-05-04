@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #img1{
+        width:50px;
+        height:50px;
+    }
+</style>
+<body>
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #c3c3c3;"/>
+</canvas>
+
+<script>
+
+    var c=document.getElementById("myCanvas");
+    var context=c.getContext("2d");
+  function drawLineCharts(){
+//    var context = wx.createCanvasContext();
+    //设置边框颜色
+    var setPoint = [
+        {x:26, y:70},
+        {x:52, y:50},
+        {x:92, y:30},
+        {x:128, y:60},
+        {x:164, y:50},
+        {x:200, y:95},
+        {x:236, y:15},
+        {x:272, y:125},
+        {x:308, y:95}
+    ]
+    c.strokeStyle('#7cb5ec');
+    //设置边框宽度
+    context.lineWidth(3);
+    context.moveTo(26, 70);
+    for (var i = 0; i<setPoint.length; i++){
+        context.lineTo(setPoint[i].x, setPoint[i].y);
+        //描边动作
+        context.stroke();
+    }
+
+    for (var i = 0; i<setPoint.length; i++){
+        //画数据标示图案
+        context.beginPath();
+        context.strokeStyle('#ffffff');
+        context.fillStyle('#7cb5ec');
+        if (i==0){
+            context.moveTo(26+5, 70);
+            context.arc(26, 70, 5, 0, 2*Math.PI, false);
+        }else{
+            context.moveTo(setPoint[i].x+5, setPoint[i].y);
+            context.arc(setPoint[i].x, setPoint[i].y, 5, 0, 2*Math.PI, false);
+        }
+        context.closePath();
+        //填充圆形颜色
+        context.fill();
+        //描边动作
+        context.stroke();
+    }
+    // drawAxis();
+
+    //绘制坐标轴
+    var opts = {
+        width:330,
+        height:200,
+        categories:['2016-03', '2016-04', '2016-05', '2016-06', '2016-07','2016-08', '2016-09', '2016-10', '2016-11']
+    }
+    var eachSpacing = Math.floor(opts.width / opts.categories.length);
+    var points = [];
+    var startX = 0;
+    var startY = opts.height -30;
+    var endX = opts.width;
+    var endY = opts.height;
+
+    //计算每个分类的起始点X坐标
+    opts.categories.forEach(function(item, index){
+        points.push(startX + index * eachSpacing);
+    })
+    points.push(endX);
+
+    //绘制横坐标
+    context.beginPath();
+    context.strokeStyle('#aaaaaa');
+    context.lineWidth(1);
+
+    //绘制坐标轴横线
+    context.moveTo(startX, startY);
+    context.lineTo(endX, startY);
+    //绘制纵坐标竖线
+    context.moveTo(startX, startY);
+    context.lineTo(startX, -endY);
+    //绘制坐标轴各区块竖线
+    points.forEach(function(item, index){
+        context.moveTo(item, startY);
+        context.lineTo(item, endY-25);
+    });
+
+    // context.closePath();
+    context.stroke();
+
+    context.beginPath();
+    //设置字体大小
+    context.fontSize(8);
+    //设置字体填充颜色
+    context.fillStyle('#666666');
+    opts.categories.forEach(function(item, index){
+        context.fillText(item, points[index], startY+15);
+    });
+
+    context.closePath();
+    context.stroke();
+
+    wx.drawCanvas({
+        canvasId:'mypie2',
+        actions:context.getActions()
+    })
+    }
+
+
+
+
+
+</script>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

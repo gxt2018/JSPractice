@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF8"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <title>训练</title>
+</head>
+<body>
+<p class="p">测试段落</p>
+
+<button/> //HTML5
+<button></button>//HTML
+
+<button draggable="true" id="btn1" onclick="dian()" style="width:250px; height:30px;" type="button"/>点击按钮进行隐藏
+</body>
+<script >
+//    var btn1 = document.getElementById("btn1");
+//
+//       function dian() {
+//           alert("1")
+//       }
+//       或者可以这么写
+//说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会
+    var fuc = function () {
+        alert("卧槽!慢的一逼啊~");
+    }
+    $("#btn1").click(function () {
+        $("#btn1").css("background-color","yellow")
+        $("p").slideToggle(5000,fuc);
+    })
+
+</script>
+</html>
